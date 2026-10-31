@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Esbenmedia - Music, entertainment, video production and digital media in Kumasi, Ghana.">
   <title>ESBENMEDIA | Official Website</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#f5b82e">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Arial,sans-serif;background:#f5f7fb;color:#172033;line-height:1.6}
     header{background:#101827;color:white;padding:18px 7%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:15px}
@@ -18,15 +19,13 @@
     section{padding:70px 7%}.section-title{text-align:center;font-size:32px;margin-bottom:12px}.section-intro{text-align:center;color:#657084;max-width:600px;margin:0 auto 35px}
     .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
     .service-card{background:white;padding:28px 22px;border-radius:12px;box-shadow:0 5px 20px #1018270c;border-bottom:3px solid #f5b82e}
-    .service-card .icon{font-size:34px}.service-card h3{margin:12px 0}.service-card p{color:#657084;font-size:15px}
     .about{background:white;text-align:center}.about p{max-width:750px;margin:15px auto;color:#566176}
     .videos{background:#f5f7fb}.video-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;max-width:1100px;margin:0 auto}
     .video-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 5px 20px #1018270c}
-    .video-card iframe{width:100%;height:200px;border:0}.video-card .info{padding:15px}.video-card .info h4{font-size:16px;margin-bottom:5px}.video-card .info p{font-size:13px;color:#657084}
+    .video-card iframe{width:100%;height:200px;border:0}.video-card .info{padding:15px}
     .contact{background:#101827;color:white;text-align:center}.contact .section-intro{color:#d7dfeb}
     .contact-details{max-width:550px;margin:25px auto;text-align:left}.contact-details p{padding:10px;border-bottom:1px solid #344054;overflow-wrap:anywhere}.contact-details a{color:#f5b82e;text-decoration:none}
     footer{background:#080e18;color:#c6ccd5;text-align:center;padding:20px;font-size:13px}
-    @media(max-width:600px){header{justify-content:center}nav{justify-content:center}.hero{padding:75px 6%}section{padding:55px 6%}}
   </style>
 </head>
 <body>
@@ -36,99 +35,40 @@
       <a href="#home">Home</a>
       <a href="#live">Live Radio</a>
       <a href="#videos">Videos</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="tag">MEDIA • ENTERTAINMENT • DIGITAL</div>
-      <h1>Your Story. Our Media.<br>One Platform.</h1>
-      <p>Welcome to Esbenmedia, your destination for creative media, entertainment, video production and digital content in Ghana.</p>
-      <a href="#live" class="btn">Listen Live Now</a>
-      <a href="#contact" class="btn secondary">Contact Us</a>
-    </section>
+  <section class="hero" id="home">
+    <div class="tag">MEDIA • ENTERTAINMENT • DIGITAL</div>
+    <h1>Your Story. Our Media.<br>One Platform.</h1>
+    <p>Welcome to Esbenmedia, creative media and live radio from Kumasi, Ghana.</p>
+    <a href="#live" class="btn">Listen Live Now</a>
+  </section>
 
-    <!-- RADIO PLAYER -->
-    <section id="live" style="background:#0f1a2e; padding:60px 7%; text-align:center; color:white;">
-      <h2 style="font-size:32px; margin-bottom:10px;">Listen to ESBEN RADIO Live</h2>
-      <p style="color:#d7dfeb; margin-bottom:25px;">Live online radio - Kumasi, Ghana</p>
-      <div style="max-width:600px; margin:0 auto; background:white; padding:25px; border-radius:12px;">
-        <p style="color:#101827; font-weight:bold; margin-bottom:12px;">🔴 LIVE NOW - ESBEN RADIO</p>
-        <audio controls autoplay style="width:100%; height:45px;">
-          <source src="https://stream.zeno.fm/ba9rlqyoxsqvv" type="audio/mpeg">
-        </audio>
-        <p style="color:#657084; font-size:13px; margin-top:12px;">Your radio is connected! Keep your Zeno station ON AIR.</p>
-      </div>
-    </section>
+  <!-- BACKGROUND RADIO PLAYER IS HERE -->
+  <section id="live" style="background:#0f1a2e; padding:60px 7%; text-align:center; color:white;">
+    <h2 style="font-size:32px; margin-bottom:10px;">Listen to ESBENMEDIA Live</h2>
+    <p style="color:#d7dfeb; margin-bottom:25px;">Plays in background - even when you leave the site</p>
+    
+    <div style="max-width:600px; margin:0 auto; background:white; padding:25px; border-radius:12px;">
+      <p style="color:#101827; font-weight:bold; margin-bottom:12px;">🔴 LIVE NOW - ESBENMEDIA RADIO</p>
+      
+      <audio id="esbenRadio" controls autoplay playsinline style="width:100%; height:50px;">
+        <source src="https://stream.zeno.fm/ba9rlqyoxsqvv" type="audio/mpeg">
+      </audio>
 
-    <!-- MUSIC & VIDEOS - NEW -->
-    <section id="videos" class="videos">
-      <h2 class="section-title">Music & Videos</h2>
-      <p class="section-intro">Latest music, interviews and entertainment content from Esbenmedia</p>
-      <div class="video-grid">
-        <!-- VIDEO 1 - Change the YouTube ID -->
-        <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-          <div class="info">
-            <h4>Your Video Title 1</h4>
-            <p>Replace the YouTube link with your own video. Change dQw4w9WgXcQ to your video ID</p>
-          </div>
-        </div>
-        <!-- VIDEO 2 -->
-        <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" allowfullscreen></iframe>
-          <div class="info">
-            <h4>Your Video Title 2</h4>
-            <p>Add your music video, interview or event here</p>
-          </div>
-        </div>
-        <!-- VIDEO 3 -->
-        <div class="video-card">
-          <iframe src="https://www.youtube.com/embed/9bZkp7q19f0" allowfullscreen></iframe>
-          <div class="info">
-            <h4>Your Video Title 3</h4>
-            <p>Copy YouTube link, e.g. https://youtu.be/XXXXX - take the XXXXX part</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      <button id="bgPlayBtn" onclick="startRadio()" style="margin-top:12px; width:100%; padding:12px; background:#101827; color:#f5b82e; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">
+        ▶️ Tap to Play in Background
+      </button>
 
-    <section id="services">
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-intro">Creative solutions to help individuals, artists and businesses share their stories with the world.</p>
-      <div class="services">
-        <article class="service-card"><div class="icon">🎵</div><h3>Music & Entertainment</h3><p>Music, entertainment content and artist promotion.</p></article>
-        <article class="service-card"><div class="icon">🎬</div><h3>Video Production</h3><p>Creative video projects, filming and visual storytelling.</p></article>
-        <article class="service-card"><div class="icon">📢</div><h3>Advertising</h3><p>Promotional content to help businesses reach more customers.</p></article>
-        <article class="service-card"><div class="icon">🌐</div><h3>Digital Media</h3><p>Online content and digital media solutions for your brand.</p></article>
-      </div>
-    </section>
+      <p style="color:#657084; font-size:12px; margin-top:10px;">Tap play, then you can minimize or lock phone - it will continue.</p>
+    </div>
+  </section>
 
-    <section class="about" id="about">
-      <h2 class="section-title">About Esbenmedia</h2>
-      <p>Esbenmedia is a media brand based in Kumasi, Ghana. Our goal is to connect people and businesses through creative content, entertainment and digital media.</p>
-      <p>Get in touch to discuss your project, advertising needs or media collaboration.</p>
-    </section>
-
-    <section class="contact" id="contact">
-      <h2 class="section-title">Contact Us</h2>
-      <p class="section-intro">Have a project or business enquiry? Contact Esbenmedia today.</p>
-      <div class="contact-details">
-        <p><strong>Email:</strong> <a href="mailto:Esbenmedia@gmail.com">Esbenmedia@gmail.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+233248762528">+233248762528</a></p>
-        <p><strong>Address:</strong> Kumasi, Ghana</p>
-      </div>
-      <a class="btn" href="https://wa.me/233248762528" target="_blank">Chat With Us on WhatsApp</a>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; <span id="year"></span> Esbenmedia. All rights reserved.</p>
-  </footer>
-
-  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
-</body>
-</html>
+  <section id="videos" class="videos">
+    <h2 class="section-title">Music & Videos</h2>
+    <p class="section-intro">Latest content from Esbenmedia</p>
+    <div class="video-grid">
+      <div class="video-card"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe><div class="info"><h4>Your Video 1 - Replace Me</h4></div></div>
+      <div class="video-card"><iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" allowfullscreen></iframe><div class="info"><h4>Your Video 2 - Replace Me
